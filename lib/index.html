@@ -13,7 +13,7 @@
                    console.info('connected')
                 });
                 socket.on('onPrice', function (data) {
-                    document.querySelector('.uga').innerHTML += ('<li>' + data.name + ' ' + data.price + '</li>');
+                    document.querySelector('.uga').innerHTML += ('<li>' + data.name + ' ' + data.sellPrice + ' ' + data.buyPrice + '</li>');
                 });
             </script>
             </body>
