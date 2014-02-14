@@ -1,0 +1,21 @@
+<!doctype html>
+        <html>
+
+            <head>
+
+            </head>
+            <body>
+            <ul class="uga"></ul>
+            <script src="/socket.io/socket.io.js"></script>
+            <script>
+                var socket = io.connect('http://localhost:1030');
+                socket.on('connected', function() {
+                   console.info('connected')
+                });
+                socket.on('onPrice', function (data) {
+                    document.querySelector('.uga').innerHTML += ('<li>' + data.name + ' ' + data.price + '</li>');
+                });
+            </script>
+            </body>
+        </html>
+

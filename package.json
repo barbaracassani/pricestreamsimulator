@@ -1,0 +1,42 @@
+{
+  "name": "pricestreamsimulator",
+  "version": "0.1.0",
+  "main": "lib/pricestreamsimulator.js",
+  "description": "Simulator of streaming prices for development purposes",
+  "homepage": "kitsch-en.net",
+  "bugs": "user/repo/issues",
+  "author": {
+    "name": "Barbara Cassani",
+    "email": "b.cassani@laposte.net",
+    "url": "kitsch-en.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "user/repo"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "files": [
+    ""
+  ],
+  "keywords":[
+  ],
+  "dependencies" : {
+      "node-uuid" : "latest",
+      "socket-io": "latest"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.7.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.0",
+    "load-grunt-tasks": "~0.2.0",
+    "time-grunt": "~0.2.0",
+    "jshint-stylish": "~0.1.3"
+  },
+  "scripts": {
+    "test": "grunt"
+  }
+}

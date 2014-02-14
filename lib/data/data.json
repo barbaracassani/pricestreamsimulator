@@ -1,0 +1,31 @@
+{"quotes" : {
+
+        "Acme Inc" : {
+
+            "id" : 1,
+            "max" : 1200,
+            "min" : 1000,
+            "volatility" : 0.5
+
+        },
+
+        "Rio Zuccotto" : {
+
+            "id" : 2,
+            "max" : 40,
+            "min" : 12,
+            "volatility" : 0.1
+
+        },
+
+        "Soylent Green Corp"  : {
+
+            "id" : 3,
+            "max" : 1210,
+            "min" : 100,
+            "volatility" : 1
+
+        }
+    }
+
+}
