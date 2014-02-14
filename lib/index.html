@@ -2,18 +2,33 @@
         <html>
 
             <head>
-
+                <link rel="stylesheet" href="css/reset.css">
+                <link rel="stylesheet" href="css/main.css">
             </head>
             <body>
-            <ul class="uga"></ul>
+            <ul class="flex-container one"></ul>
             <script src="/socket.io/socket.io.js"></script>
             <script>
-                var socket = io.connect('http://localhost:1030');
-                socket.on('connected', function() {
-                   console.info('connected')
+                var socket = io.connect('http://localhost:1030'),
+                        formatter = function(num) {
+                            return(num.toFixed(2));
+                        };
+                socket.on('connected', function(data) {
+                   data.forEach(function (market) {
+                       console.info(market)
+                       document.querySelector('.flex-container.one').innerHTML +=
+                               ('<li class="flex-item '+ market.id +'">' + market.name + ' <div class="sell">' + formatter(market.sellPrice) + '</div><div class="buy"> ' + formatter(market.buyPrice) + '</div></li>');
+
+                   })
                 });
                 socket.on('onPrice', function (data) {
-                    document.querySelector('.uga').innerHTML += ('<li>' + data.name + ' ' + data.sellPrice + ' ' + data.buyPrice + '</li>');
+                    console.info('.flex-container.one .' + data.id + ' .sell');
+                    var elSell = document.querySelector('.flex-container.one .' + data.id + ' .sell');
+                    var elBuy = document.querySelector('.flex-container.one .' + data.id + ' .buy');
+
+                    elSell.innerHTML = formatter(data.sellPrice);
+                    elBuy.innerHTML = formatter(data.buyPrice);
+                   // document.querySelector('.flex-container').innerHTML += ('<li class="flex-item">' + data.name + ' ' + data.sellPrice + ' ' + data.buyPrice + '</li>');
                 });
             </script>
             </body>
