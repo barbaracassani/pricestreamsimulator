@@ -18,7 +18,7 @@
                     el.innerHTML = '';
                    data.forEach(function (market) {
                        el.innerHTML +=
-                               ('<li class="flex-item '+ market.id +'"><div class="market-name">' + market.name + '</div><div class="flex-container"><div class="back sell">' + formatter(market.sellPrice) + '</div><div class="back buy"> ' + formatter(market.buyPrice) + '</div></div></li>');
+                               ('<li class="flex-item '+ market.id +'"><div class="market-name"><span>' + market.name + '</span></div><button class="stop">Stop</button><div class="flex-container"><div class="back sell price">' + formatter(market.sellPrice) + '</div><div class="back buy price"> ' + formatter(market.buyPrice) + '</div></div></li>');
 
                    })
                 });

@@ -1,0 +1,9 @@
+{
+    "name": "pricestreamsimulator",
+    "version": "0.1.0",
+    "dependencies": {
+        "requirejs": "~2.1.9",
+        "react": "latest",
+        "jquery":"latest"
+    }
+}
