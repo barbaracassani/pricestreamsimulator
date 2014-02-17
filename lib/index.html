@@ -17,38 +17,29 @@
                    var el = document.querySelector('.flex-container.one');
                     el.innerHTML = '';
                    data.forEach(function (market) {
-                       colorClass = market.goingUp ? 'up' : 'down';
                        el.innerHTML +=
-                               ('<li class="flex-item '+ market.id +'">' + market.name + ' <div class="back sell">' + formatter(market.sellPrice) + '</div><div class="back buy"> ' + formatter(market.buyPrice) + '</div></li>');
+                               ('<li class="flex-item '+ market.id +'"><div class="market-name">' + market.name + '</div><div class="flex-container"><div class="back sell">' + formatter(market.sellPrice) + '</div><div class="back buy"> ' + formatter(market.buyPrice) + '</div></div></li>');
 
                    })
                 });
                 socket.on('onPrice', function (data) {
-                    console.info('.flex-container.one .' + data.id + ' .sell');
+
                     var elSell = document.querySelector('.flex-container.one .' + data.id + ' .sell');
                     var elBuy = document.querySelector('.flex-container.one .' + data.id + ' .buy');
 
-                    elSell.classList.remove('up');
-                    elSell.classList.remove('down');
-
-                    elBuy.classList.remove('up');
-                    elBuy.classList.remove('down');
-
                     elBuy.classList.remove('back');
                     elSell.classList.remove('back');
 
-                    elBuy.classList.add(data.goingUp ? 'up' : 'down');
-                    elSell.classList.add(data.goingUp ? 'up' : 'down');
+                    elSell.classList.toggle('up', data.goingUp);
+                    elSell.classList.toggle('down', !data.goingUp);
 
-                    elBuy.classList.remove('back');
-                    elSell.classList.remove('back');
+                    elBuy.classList.toggle('up', data.goingUp);
+                    elBuy.classList.toggle('down', !data.goingUp);
 
                     elSell.innerHTML = formatter(data.sellPrice);
                     elBuy.innerHTML = formatter(data.buyPrice);
 
                     window.setTimeout(function () {
-                        elBuy.classList.add(data.goingUp ? 'up' : 'down');
-                        elSell.classList.add(data.goingUp ? 'up' : 'down');
                         elBuy.classList.add('back');
                         elSell.classList.add('back');
                     }, 0);

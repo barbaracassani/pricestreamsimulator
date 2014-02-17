@@ -1,9 +1,12 @@
 .html {
     font-family: sans-serif;
 }
+.market-name {
+    height: 2em;
+    margin-bottom: 1em;
+}
 .flex-container {
     padding: 0;
-    margin: 0;
     list-style: none;
 
     display: -webkit-box;
@@ -17,26 +20,29 @@
 }
 
 .flex-item {
-    background: tomato;
+    font-family: sans-serif;
+    background: #aeaeae;
     padding: 0.5em;
-    width: 7em;
+    width: 9em;
     height: 4em;
-    margin-top: 1em;
-
+    margin: 1em;
+    color: white;
     line-height: 1em;
 
     font-weight: bold;
-    font-size: 3em;
+    font-size: 1.3em;
     text-align: center;
 }
 
 
 .up {
-    color: greenyellow;
+
+    color: #228b22;
 }
 
 .down {
-    color: lightpink;
+    color: tomato;
+
 }
 
 
