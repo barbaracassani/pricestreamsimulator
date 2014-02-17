@@ -26,7 +26,8 @@
   ],
   "dependencies" : {
       "node-uuid" : "latest",
-      "socket-io": "latest"
+      "socket.io": "latest",
+      "when" : "latest"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.7.0",

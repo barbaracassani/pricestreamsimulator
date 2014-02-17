@@ -3,9 +3,9 @@
         "Acme Inc" : {
 
             "id" : 1,
-            "max" : 1200,
-            "min" : 1000,
-            "spread" : 39,
+            "max" : 1200.2,
+            "min" : 1000.1,
+            "spread" : 39.1,
             "volatility" : 0.5
 
         },
@@ -25,7 +25,7 @@
             "id" : 3,
             "max" : 1210,
             "min" : 100,
-            "spread" : 61,
+            "spread" : 61.9,
             "volatility" : 1
 
         }

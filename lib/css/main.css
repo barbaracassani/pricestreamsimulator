@@ -1,3 +1,6 @@
+.html {
+    font-family: sans-serif;
+}
 .flex-container {
     padding: 0;
     margin: 0;
@@ -21,8 +24,23 @@
     margin-top: 1em;
 
     line-height: 1em;
-    color: white;
+
     font-weight: bold;
     font-size: 3em;
     text-align: center;
+}
+
+
+.up {
+    color: greenyellow;
+}
+
+.down {
+    color: lightpink;
+}
+
+
+.back {
+    color: white;
+    transition: color 500ms ease-in 500ms;
 }

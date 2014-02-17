@@ -1,0 +1,14 @@
+{"quotes" : {
+
+    "Umbrella Corporation" : {
+
+        "id" : 11,
+        "max" : 1700.2,
+        "min" : 1000.3,
+        "spread" : 99.3,
+        "volatility" : 0.9
+
+    }
+}
+
+}

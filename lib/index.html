@@ -14,10 +14,12 @@
                             return(num.toFixed(2));
                         };
                 socket.on('connected', function(data) {
+                   var el = document.querySelector('.flex-container.one');
+                    el.innerHTML = '';
                    data.forEach(function (market) {
-                       console.info(market)
-                       document.querySelector('.flex-container.one').innerHTML +=
-                               ('<li class="flex-item '+ market.id +'">' + market.name + ' <div class="sell">' + formatter(market.sellPrice) + '</div><div class="buy"> ' + formatter(market.buyPrice) + '</div></li>');
+                       colorClass = market.goingUp ? 'up' : 'down';
+                       el.innerHTML +=
+                               ('<li class="flex-item '+ market.id +'">' + market.name + ' <div class="back sell">' + formatter(market.sellPrice) + '</div><div class="back buy"> ' + formatter(market.buyPrice) + '</div></li>');
 
                    })
                 });
@@ -26,9 +28,22 @@
                     var elSell = document.querySelector('.flex-container.one .' + data.id + ' .sell');
                     var elBuy = document.querySelector('.flex-container.one .' + data.id + ' .buy');
 
+                    elSell.classList.toggle('up', data.goingUp);
+                    elSell.classList.toggle('down', !data.goingUp);
+
+                    elBuy.classList.toggle('up', data.goingUp);
+                    elBuy.classList.toggle('down', !data.goingUp);
+
+                    elBuy.classList.remove('back');
+                    elSell.classList.remove('back');
+
                     elSell.innerHTML = formatter(data.sellPrice);
                     elBuy.innerHTML = formatter(data.buyPrice);
-                   // document.querySelector('.flex-container').innerHTML += ('<li class="flex-item">' + data.name + ' ' + data.sellPrice + ' ' + data.buyPrice + '</li>');
+
+                    window.setTimeout(function () {
+                        elBuy.classList.add('back');
+                        elSell.classList.add('back');
+                    }, 0);
                 });
             </script>
             </body>
