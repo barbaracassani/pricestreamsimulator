@@ -30,6 +30,7 @@
     background: #aeaeae;
     padding: 0.5em;
     width: 9em;
+    min-width: 9em;
     height: 5em;
     margin: 1em;
     color: white;
@@ -67,12 +68,13 @@ button {
     width: 5em;
     margin: 0 auto .5em auto;
     padding: .4em;
+    cursor: pointer;
 }
 
 button.stop {
     background-color: tomato;
 
 }
-button.start {
+button.stopped {
     background-color: #228b22;
 }

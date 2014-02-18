@@ -8,43 +8,7 @@
             <body>
             <ul class="flex-container one"></ul>
             <script src="/socket.io/socket.io.js"></script>
-            <script>
-                var socket = io.connect('http://localhost:1030'),
-                        formatter = function(num) {
-                            return(num.toFixed(2));
-                        };
-                socket.on('connected', function(data) {
-                   var el = document.querySelector('.flex-container.one');
-                    el.innerHTML = '';
-                   data.forEach(function (market) {
-                       el.innerHTML +=
-                               ('<li class="flex-item '+ market.id +'"><div class="market-name"><span>' + market.name + '</span></div><button class="stop">Stop</button><div class="flex-container"><div class="back sell price">' + formatter(market.sellPrice) + '</div><div class="back buy price"> ' + formatter(market.buyPrice) + '</div></div></li>');
-
-                   })
-                });
-                socket.on('onPrice', function (data) {
-
-                    var elSell = document.querySelector('.flex-container.one .' + data.id + ' .sell');
-                    var elBuy = document.querySelector('.flex-container.one .' + data.id + ' .buy');
-
-                    elBuy.classList.remove('back');
-                    elSell.classList.remove('back');
-
-                    elSell.classList.toggle('up', data.goingUp);
-                    elSell.classList.toggle('down', !data.goingUp);
-
-                    elBuy.classList.toggle('up', data.goingUp);
-                    elBuy.classList.toggle('down', !data.goingUp);
-
-                    elSell.innerHTML = formatter(data.sellPrice);
-                    elBuy.innerHTML = formatter(data.buyPrice);
-
-                    window.setTimeout(function () {
-                        elBuy.classList.add('back');
-                        elSell.classList.add('back');
-                    }, 0);
-                });
-            </script>
+            <script src="js/vanilla.js"></script>
             </body>
         </html>
 
