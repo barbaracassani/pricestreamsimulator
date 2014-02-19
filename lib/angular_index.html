@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body ng-app="pss" ng-controller="pssCtrl">
+<ul class="flex-container one">
+
+    <li class="flex-item"><div class="market-name"><span>
+                    {{market.name}}</span></div><button class="stop">Stop</button><div class="flex-container">
+        <div class="back sell price">{{market.sellPrice}}
+            </div><div class="back buy price">{{market.buyPrice}}</div></div></li>
+</ul>
+<a href="angular_index.html">Angular version</a>
+<a href="react_index.html">Reactjs version</a>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/bower_components/angular/angular.js"></script>
+<script src="js/angular_version.js"></script>
+</body>
+</html>

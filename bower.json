@@ -4,6 +4,8 @@
     "dependencies": {
         "requirejs": "~2.1.9",
         "react": "latest",
-        "jquery":"latest"
+        "angular" : "latest",
+        "jquery":"latest",
+        "breve-js" : "latest"
     }
 }
