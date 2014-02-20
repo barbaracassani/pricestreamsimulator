@@ -8,10 +8,10 @@
 <body ng-app="pss" ng-controller="pssCtrl">
 <ul class="flex-container one">
 
-    <li class="flex-item"><div class="market-name"><span>
-                    {{market.name}}</span></div><button class="stop">Stop</button><div class="flex-container">
-        <div class="back sell price">{{market.sellPrice}}
-            </div><div class="back buy price">{{market.buyPrice}}</div></div></li>
+    <li ng-repeat="market in markets" class="flex-item"><div class="market-name"><span>
+        {{market.name}}</span></div><button ng-class="(market.id === stopped) ? 'stopped' : ''" ng-click="stopTicking($event)" class="stop">{{(market.id === stopped) && 'Play' || 'Stop'}}</button><div class="flex-container">
+        <div class="back sell price">{{market.sellPrice | currency:"$"}}
+        </div><div class="back buy price">{{market.buyPrice | currency:"$"}}</div></div></li>
 </ul>
 <a href="angular_index.html">Angular version</a>
 <a href="react_index.html">Reactjs version</a>
